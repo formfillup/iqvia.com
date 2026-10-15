@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers | deel.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#top" class="brand"><img src="logo.png" alt="deel."></a>
+    <nav aria-label="Main">
+      <a href="#roles">Open Roles</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Join our global team.</h1>
+      <p>We help people work with anyone, anywhere. Find a role that fits, apply in two minutes, and hear back from a real person.</p>
+      <a class="btn btn-light" href="#roles">See open roles</a>
+    </div>
+    <div class="hero-art">
+      <picture>
+        <source media="(max-width: 768px)" srcset="hero-mobile-640.jpg 640w, hero-mobile.jpg 1024w" sizes="100vw" width="1024" height="1536">
+        <img src="hero.jpg" alt="HR dashboard showing candidate, onboarding and hired statuses beside a person working on a laptop">
+      </picture>
+    </div>
+  </section>
+
+  <section id="roles" class="section wrap">
+    <h2>Open roles</h2>
+
+    <article class="job" id="job-cx">
+      <div class="job-head">
+        <div>
+          <h3>Customer Experience Executive</h3>
+          <ul class="badges">
+            <li class="badge">Remote</li>
+            <li class="badge">Entry Level</li>
+            <li class="badge">Day Shift</li>
+            <li class="badge badge-solid">Active</li>
+          </ul>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div><dt>Salary</dt><dd>BDT 20,000 – 25,000 / month</dd></div>
+        <div><dt>Working hours</dt><dd>8 hours / day (standard day shift)</dd></div>
+        <div><dt>Experience</dt><dd>Entry level. No prior experience required.</dd></div>
+      </dl>
+
+      <div class="details" id="cx-details" hidden>
+        <h4>Overview and qualifications</h4>
+        <p>You will be the first point of contact for our customers, answering questions, solving problems, and making sure every person leaves the conversation better off.</p>
+        <ul class="checks">
+          <li>Strong verbal and written communication skills</li>
+          <li>Ability to handle customer inquiries with patience and empathy</li>
+          <li>Excellent problem-solving abilities and a customer-first mindset</li>
+          <li>Willingness to learn and adapt in a fast-paced environment</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-ghost" id="toggle-details" aria-expanded="false" aria-controls="cx-details">View details</button>
+        <button class="btn btn-dark" id="open-apply">Apply now</button>
+      </div>
+    </article>
+
+    <article class="job closed">
+      <div class="job-head">
+        <div>
+          <h3>Data Entry Specialist</h3>
+          <ul class="badges"><li class="badge">Remote</li><li class="badge">Entry Level</li><li class="badge badge-muted">Closed</li></ul>
+        </div>
+        <button class="btn btn-ghost" disabled>Position filled</button>
+      </div>
+    </article>
+
+    <article class="job closed">
+      <div class="job-head">
+        <div>
+          <h3>Virtual Assistant</h3>
+          <ul class="badges"><li class="badge">Remote</li><li class="badge">Part Time</li><li class="badge badge-muted">Closed</li></ul>
+        </div>
+        <button class="btn btn-ghost" disabled>Position filled</button>
+      </div>
+    </article>
+
+    <article class="job closed">
+      <div class="job-head">
+        <div>
+          <h3>Technical Support Lead</h3>
+          <ul class="badges"><li class="badge">Remote</li><li class="badge">Senior</li><li class="badge badge-muted">Closed</li></ul>
+        </div>
+        <button class="btn btn-ghost" disabled>Position filled</button>
+      </div>
+    </article>
+  </section>
+
+  <section id="about" class="section band">
+    <div class="wrap narrow">
+      <h2>About us</h2>
+      <p>deel. makes hiring, paying, and working across borders simple. Our team is spread across time zones, and we hire for curiosity, care, and the habit of finishing what you start.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section wrap narrow">
+    <h2>Contact</h2>
+    <p>Questions about a role or the hiring process? Write to <a href="mailto:careers@example.com">careers.deel@gmail.com</a> and we will reply within two working days.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap bar"><span>© 2026 deel. All rights reserved.</span></div>
+</footer>
+
+<dialog id="apply-modal" aria-labelledby="apply-title">
+  <form id="apply-form" novalidate>
+    <div class="modal-head">
+      <div>
+        <h2 id="apply-title">Apply for Customer Experience Executive</h2>
+        <p class="hint">Fields marked * are required.</p>
+      </div>
+      <button type="button" class="close" id="close-apply" aria-label="Close form">×</button>
+    </div>
+
+    <label>Full name *
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Email address *
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>Phone number *
+      <input type="tel" name="phone" autocomplete="tel" required>
+    </label>
+    <label>Resume / CV (.pdf, .doc, .docx)
+      <input type="file" name="cv" accept=".pdf,.doc,.docx">
+    </label>
+    <label>Cover note (optional)
+      <textarea name="message" rows="4"></textarea>
+    </label>
+
+    <p class="error" id="form-error" role="alert" hidden></p>
+    <button type="submit" class="btn btn-dark full">Submit application</button>
+  </form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
