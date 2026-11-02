@@ -8,6 +8,26 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Hamburger Menu Toggle
+  var navToggle = document.getElementById('nav-toggle');
+  var mainNav = document.getElementById('main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+      var isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isExpanded));
+      mainNav.classList.toggle('is-open');
+    });
+
+    // Close menu when a navigation link is clicked
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mainNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   var modal = document.getElementById('apply-modal');
   var form = document.getElementById('apply-form');
   var error = document.getElementById('form-error');
