@@ -243,6 +243,96 @@ textarea.invalid {
 .thanks h1{font-size:clamp(2.5rem,8vw,5rem);letter-spacing:-.04em;line-height:1;margin:0 0 20px}
 .thanks p{max-width:46ch;margin:0 auto 32px;color:var(--muted)}
 
+/* ==========================================================================
+   HAMBURGER MENU STYLES
+   ========================================================================== */
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 20;
+}
+
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  position: relative;
+}
+
+.site-header .nav-toggle {
+  color: var(--white);
+}
+
+.site-header.solid .nav-toggle {
+  color: var(--ink);
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger-icon::before { top: -7px; }
+.hamburger-icon::after { top: 7px; }
+
+/* Open State (X transform) */
+.nav-toggle[aria-expanded="true"] .hamburger-icon {
+  background-color: transparent !important;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  nav#main-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--white);
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 2px solid var(--black);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  nav#main-nav.is-open {
+    display: flex;
+  }
+
+  nav#main-nav a {
+    color: var(--ink) !important;
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav#main-nav a:last-child {
+    border-bottom: none;
+  }
+}
+
 @media (max-width:640px){
   nav{gap:16px}nav a{font-size:.85rem}
   .hero{padding:110px 0 300px}
